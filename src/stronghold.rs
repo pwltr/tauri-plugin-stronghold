@@ -824,7 +824,7 @@ async fn save_snapshot(runtime: &mut ActorRuntime, snapshot_path: &Path) -> Resu
     )
 }
 
-async fn clear_stronghold_cache(mut runtime: &mut ActorRuntime, persist: bool) -> Result<()> {
+async fn clear_stronghold_cache(runtime: &mut ActorRuntime, persist: bool) -> Result<()> {
     if let Some(curr_snapshot_path) = CURRENT_SNAPSHOT_PATH
         .get_or_init(Default::default)
         .lock()
